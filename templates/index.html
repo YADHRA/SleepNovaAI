@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sleep Quality Predictor | AI-Powered Sleep Analysis</title>
+<meta name="description" content="Predict your sleep quality using AI-powered health and lifestyle analysis." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ================= ANIMATED BACKGROUND ================= -->
+<div class="bg-ambient" aria-hidden="true">
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="glow glow-3"></div>
+  <div class="grain"></div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">
+      <i class="fa-solid fa-moon logo-icon"></i>
+      <span>SleepNova<span class="logo-accent">AI</span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#features" class="nav-link">Features</a></li>
+      <li><a href="#predict" class="nav-link">Predict</a></li>
+      <li><a href="#statistics" class="nav-link">Statistics</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <a href="#predict" class="btn btn-nav">Start Prediction</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="eyebrow" data-aos>
+        <span class="eyebrow-dot"></span> AI-Powered Sleep Analysis
+      </div>
+
+      <h1 class="hero-title" data-aos>
+        <span class="type-line">Sleep Better.</span>
+        <span class="type-line accent-text">Live Better.</span>
+      </h1>
+
+      <p class="hero-subtitle" data-aos>
+        Predict your sleep quality using AI-powered health analysis.
+        Understand the habits shaping your nights — and the changes
+        that will transform them.
+      </p>
+
+      <div class="hero-actions" data-aos>
+        <a href="#predict" class="btn btn-primary">
+          <span>Start Prediction</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#features" class="btn btn-ghost">
+          <i class="fa-solid fa-play"></i>
+          <span>Explore Features</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" data-aos>
+        <div class="stat">
+          <span class="stat-num" data-count="1200">0</span>
+          <span class="stat-label">Data Points Trained</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="14">0</span>
+          <span class="stat-label">Lifestyle Factors</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">Quality Classes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-aos>
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+
+      <div class="floating-card card-moon">
+        <i class="fa-solid fa-moon"></i>
+      </div>
+      <div class="floating-card card-score">
+        <span class="fc-label">Sleep Score</span>
+        <span class="fc-value">86</span>
+      </div>
+      <div class="floating-card card-heart">
+        <i class="fa-solid fa-heart-pulse"></i>
+      </div>
+      <div class="floating-card card-zzz">
+        <i class="fa-solid fa-bed"></i>
+      </div>
+
+      <div class="hero-orb">
+        <div class="orb-inner">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span></span>
+  </div>
+</header>
+
+<!-- ================= FEATURES ================= -->
+<section class="features" id="features">
+  <div class="section-head" data-aos>
+    <span class="section-eyebrow">Capabilities</span>
+    <h2 class="section-title">Everything you need to understand your sleep</h2>
+    <p class="section-sub">A complete AI-driven toolkit built on real lifestyle and physiological data.</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-card" data-aos>
+      <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+      <h3>AI Prediction</h3>
+      <p>A Random Forest model trained on lifestyle and physiological data predicts your sleep quality in real time.</p>
+    </div>
+
+    <div class="feature-card" data-aos>
+      <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>Lifestyle Analysis</h3>
+      <p>Screen time, caffeine, stress, and activity are weighed together to reveal what's really shaping your nights.</p>
+    </div>
+
+    <div class="feature-card" data-aos>
+      <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+      <h3>Sleep Score</h3>
+      <p>A single 0–100 score distills every factor into one clear, trackable number.</p>
+    </div>
+
+    <div class="feature-card" data-aos>
+      <div class="feature-icon"><i class="fa-solid fa-list-check"></i></div>
+      <h3>Personal Suggestions</h3>
+      <p>Actionable, rule-based tips tailored to the exact habits driving your prediction.</p>
+    </div>
+
+    <div class="feature-card" data-aos>
+      <div class="feature-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+      <h3>Health Insights</h3>
+      <p>See how BMI, hydration, and daily steps interact with your sleep patterns over time.</p>
+    </div>
+
+    <div class="feature-card" data-aos>
+      <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+      <h3>History Tracking</h3>
+      <p>Every prediction is logged this session so you can watch trends emerge as habits change.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PREDICTION FORM ================= -->
+<section class="predict-section" id="predict">
+  <div class="section-head" data-aos>
+    <span class="section-eyebrow">Analysis</span>
+    <h2 class="section-title">Tell us about your day</h2>
+    <p class="section-sub">Fill in your habits below — the more accurate, the sharper the prediction.</p>
+  </div>
+
+  <div class="predict-layout">
+    <form class="glass-card form-card" id="predictForm" data-aos>
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="sleep_duration"><i class="fa-solid fa-bed"></i> Sleep Duration (hrs)</label>
+          <input type="number" id="sleep_duration" name="sleep_duration" min="0" max="14" step="0.25" value="7" required>
+        </div>
+
+        <div class="form-group">
+          <label for="bedtime"><i class="fa-solid fa-clock"></i> Bed Time</label>
+          <input type="time" id="bedtime" name="bedtime" value="23:00" required>
+        </div>
+
+        <div class="form-group">
+          <label for="wake_time"><i class="fa-solid fa-sun"></i> Wake Up Time</label>
+          <input type="time" id="wake_time" name="wake_time" value="07:00" required>
+        </div>
+
+        <div class="form-group">
+          <label for="exercise_duration"><i class="fa-solid fa-person-running"></i> Exercise Duration (min)</label>
+          <input type="number" id="exercise_duration" name="exercise_duration" min="0" max="300" value="20" required>
+        </div>
+
+        <div class="form-group">
+          <label for="screen_time"><i class="fa-solid fa-mobile-screen"></i> Screen Time Before Bed (min)</label>
+          <input type="number" id="screen_time" name="screen_time" min="0" max="400" value="60" required>
+        </div>
+
+        <div class="form-group">
+          <label for="caffeine_intake"><i class="fa-solid fa-mug-hot"></i> Caffeine Intake</label>
+          <select id="caffeine_intake" name="caffeine_intake" required>
+            <option value="None">None</option>
+            <option value="Low">Low</option>
+            <option value="Moderate" selected>Moderate</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mood"><i class="fa-solid fa-face-smile"></i> Mood Before Sleep</label>
+          <select id="mood" name="mood" required>
+            <option value="Happy">Happy</option>
+            <option value="Neutral" selected>Neutral</option>
+            <option value="Sad">Sad</option>
+            <option value="Anxious">Anxious</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="water_intake"><i class="fa-solid fa-droplet"></i> Water Intake (L)</label>
+          <input type="number" id="water_intake" name="water_intake" min="0" max="6" step="0.1" value="2.2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="daily_steps"><i class="fa-solid fa-shoe-prints"></i> Daily Steps</label>
+          <input type="number" id="daily_steps" name="daily_steps" min="0" max="30000" step="100" value="7000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="age"><i class="fa-solid fa-cake-candles"></i> Age</label>
+          <input type="number" id="age" name="age" min="10" max="100" value="25" required>
+        </div>
+
+        <div class="form-group">
+          <label for="gender"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bmi"><i class="fa-solid fa-weight-scale"></i> BMI</label>
+          <input type="number" id="bmi" name="bmi" min="10" max="50" step="0.1" value="22.5" required>
+        </div>
+
+        <div class="form-group form-group-wide">
+          <label for="stress_level">
+            <i class="fa-solid fa-bolt"></i> Stress Level
+            <span class="range-value" id="stressValue">5</span>
+          </label>
+          <input type="range" id="stress_level" name="stress_level" min="0" max="10" value="5" class="range-slider">
+          <div class="range-scale"><span>Calm</span><span>Overwhelmed</span></div>
+        </div>
+
+        <div class="form-group form-group-wide">
+          <label><i class="fa-solid fa-bell-slash"></i> Sleep Interruptions</label>
+          <div class="radio-row">
+            <label class="radio-pill">
+              <input type="radio" name="sleep_interruptions" value="No" checked>
+              <span>No</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="sleep_interruptions" value="Yes">
+              <span>Yes</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-block" id="predictBtn">
+          <span class="btn-text">Predict</span>
+          <span class="btn-spinner" hidden></span>
+        </button>
+        <button type="reset" class="btn btn-ghost btn-block" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <!-- ============ RESULT CARD ============ -->
+    <div class="glass-card result-card" id="resultCard" data-aos>
+      <div class="result-empty" id="resultEmpty">
+        <i class="fa-solid fa-chart-simple"></i>
+        <p>Your prediction will appear here</p>
+        <span>Fill the form and hit Predict</span>
+      </div>
+
+      <div class="result-body" id="resultBody" hidden>
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 200 200">
+            <circle class="gauge-track" cx="100" cy="100" r="85"></circle>
+            <circle class="gauge-fill" id="gaugeFill" cx="100" cy="100" r="85"></circle>
+          </svg>
+          <div class="gauge-center">
+            <span class="gauge-score" id="gaugeScore">0</span>
+            <span class="gauge-max">/ 100</span>
+          </div>
+        </div>
+
+        <div class="result-label" id="resultLabel">—</div>
+        <div class="result-confidence">
+          Confidence: <strong id="resultConfidence">0%</strong>
+        </div>
+
+        <div class="prob-bars" id="probBars"></div>
+
+        <div class="suggestions" id="suggestions">
+          <h4><i class="fa-solid fa-lightbulb"></i> Suggestions</h4>
+          <ul id="suggestionsList"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATISTICS / CHARTS ================= -->
+<section class="statistics" id="statistics">
+  <div class="section-head" data-aos>
+    <span class="section-eyebrow">Insights</span>
+    <h2 class="section-title">Your sleep, visualized</h2>
+    <p class="section-sub">Charts update automatically as you make predictions.</p>
+  </div>
+
+  <div class="chart-grid">
+    <div class="glass-card chart-card chart-card-wide" data-aos>
+      <h3><i class="fa-solid fa-gauge"></i> Sleep Score Gauge</h3>
+      <canvas id="gaugeChart"></canvas>
+    </div>
+
+    <div class="glass-card chart-card" data-aos>
+      <h3><i class="fa-solid fa-chart-line"></i> Weekly Trend</h3>
+      <canvas id="trendChart"></canvas>
+    </div>
+
+    <div class="glass-card chart-card" data-aos>
+      <h3><i class="fa-solid fa-chart-pie"></i> Lifestyle Factors</h3>
+      <canvas id="lifestyleChart"></canvas>
+    </div>
+
+    <div class="glass-card chart-card" data-aos>
+      <h3><i class="fa-solid fa-bolt"></i> Stress vs Sleep</h3>
+      <canvas id="stressChart"></canvas>
+    </div>
+
+    <div class="glass-card chart-card" data-aos>
+      <h3><i class="fa-solid fa-mobile-screen"></i> Screen Time vs Sleep</h3>
+      <canvas id="screenChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual" data-aos>
+      <div class="about-ring"></div>
+      <i class="fa-solid fa-brain about-icon"></i>
+    </div>
+    <div class="about-content" data-aos>
+      <span class="section-eyebrow">About the Model</span>
+      <h2 class="section-title">Built on real behavioral science</h2>
+      <p>
+        SleepNovaAI uses a Random Forest classifier trained on lifestyle and
+        physiological signals — sleep duration, stress, screen time,
+        caffeine, exercise, and more — to classify sleep quality as
+        Good, Average, or Poor.
+      </p>
+      <p>
+        The goal isn't just prediction. It's giving you a clear, honest
+        mirror on the habits shaping your rest, and specific, achievable
+        steps to improve it.
+      </p>
+      <div class="about-badges">
+        <span class="badge"><i class="fa-solid fa-check"></i> scikit-learn</span>
+        <span class="badge"><i class="fa-solid fa-check"></i> Flask backend</span>
+        <span class="badge"><i class="fa-solid fa-check"></i> Random Forest</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER / CONTACT ================= -->
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-moon logo-icon"></i>
+        <span>SleepNova<span class="logo-accent">AI</span></span>
+      </a>
+      <p>AI-powered sleep quality analysis for a better tomorrow.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#predict">Predict</a>
+      <a href="#statistics">Statistics</a>
+      <a href="#about">About</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:hello@sleepnovaai.dev" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> SleepNovaAI. All rights reserved.</p>
+    <p>Built with Flask &amp; scikit-learn.</p>
+  </div>
+</footer>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
